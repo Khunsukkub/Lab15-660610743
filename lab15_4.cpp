@@ -17,3 +17,32 @@ int main(){
 	
 	return 0;
 }
+
+void shuffle(int &a,int &b,int &c,int &d){
+    int E[4] = {a,b,c,d};
+	int i = rand() % 4;
+
+	a = E[i];
+	while(true){
+		int j = rand()% 4;
+		b = E[j];
+		while(j != i){
+			int q = rand()% 4;
+			c = E[q];
+			while(q != j && q != i){
+				int w = rand()% 4;
+				d = E[w];
+				if(w != q && w != j && w != i){
+					break;
+				}
+			}
+			if(q != j && q != i){
+					break;
+				}
+		}
+		if(j != i){
+			break;
+		}
+    }
+}
+
